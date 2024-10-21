@@ -1,0 +1,17 @@
+{
+  "name": "osm-business-model",
+  "version": "0.0.0",
+  "description": "The business model for Open Source Manufacturing LLC",
+  "author": "Alexandria Little",
+  "license": "CC-BY-SA-4.0",
+  "packageManager": "npm",
+  "workspaces": [
+    "./packages/*",
+    "./packages/@*/*"
+  ],
+  "m30pm": {
+    "versionControlTool": "git",
+    "buildTool": "gradle",
+    "loggingLevel": "error"
+  }
+}
