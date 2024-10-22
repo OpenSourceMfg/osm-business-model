@@ -1,0 +1,634 @@
+name: business-model
+description: Schema for a business model
+title: Business Model Schema
+id: https://w3id.org/linkml/examples/personinfo
+license: https://creativecommons.org/publicdomain/zero/1.0/
+prefixes:
+  linkml:
+    prefix_prefix: linkml
+    prefix_reference: https://w3id.org/linkml/
+default_prefix: https://w3id.org/linkml/examples/personinfo/
+default_range: string
+types:
+  string:
+    name: string
+    definition_uri: https://w3id.org/linkml/String
+    description: A character string
+    notes:
+      - In RDF serializations, a slot with range of string is treated as a literal or type xsd:string.   If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "string".
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    exact_mappings:
+      - schema:Text
+    base: str
+    uri: xsd:string
+  integer:
+    name: integer
+    definition_uri: https://w3id.org/linkml/Integer
+    description: An integer
+    notes:
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "integer".
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    exact_mappings:
+      - schema:Integer
+    base: int
+    uri: xsd:integer
+  boolean:
+    name: boolean
+    definition_uri: https://w3id.org/linkml/Boolean
+    description: A binary (true or false) value
+    notes:
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "boolean".
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    exact_mappings:
+      - schema:Boolean
+    base: Bool
+    uri: xsd:boolean
+    repr: bool
+  float:
+    name: float
+    definition_uri: https://w3id.org/linkml/Float
+    description: A real number that conforms to the xsd:float specification
+    notes:
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "float".
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    exact_mappings:
+      - schema:Float
+    base: float
+    uri: xsd:float
+  double:
+    name: double
+    definition_uri: https://w3id.org/linkml/Double
+    description: A real number that conforms to the xsd:double specification
+    notes:
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "double".
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    close_mappings:
+      - schema:Float
+    base: float
+    uri: xsd:double
+  decimal:
+    name: decimal
+    definition_uri: https://w3id.org/linkml/Decimal
+    description: A real number with arbitrary precision that conforms to the xsd:decimal specification
+    notes:
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "decimal".
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    broad_mappings:
+      - schema:Number
+    base: Decimal
+    uri: xsd:decimal
+  time:
+    name: time
+    definition_uri: https://w3id.org/linkml/Time
+    description: A time object represents a (local) time of day, independent of any particular day
+    notes:
+      - URI is dateTime because OWL reasoners do not work with straight date or time
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "time".
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    exact_mappings:
+      - schema:Time
+    base: XSDTime
+    uri: xsd:time
+    repr: str
+  date:
+    name: date
+    definition_uri: https://w3id.org/linkml/Date
+    description: a date (year, month and day) in an idealized calendar
+    notes:
+      - URI is dateTime because OWL reasoners don't work with straight date or time
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "date".
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    exact_mappings:
+      - schema:Date
+    base: XSDDate
+    uri: xsd:date
+    repr: str
+  datetime:
+    name: datetime
+    definition_uri: https://w3id.org/linkml/Datetime
+    description: The combination of a date and time
+    notes:
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "datetime".
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    exact_mappings:
+      - schema:DateTime
+    base: XSDDateTime
+    uri: xsd:dateTime
+    repr: str
+  date_or_datetime:
+    name: date_or_datetime
+    definition_uri: https://w3id.org/linkml/DateOrDatetime
+    description: Either a date or a datetime
+    notes:
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "date_or_datetime".
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    base: str
+    uri: linkml:DateOrDatetime
+    repr: str
+  uriorcurie:
+    name: uriorcurie
+    definition_uri: https://w3id.org/linkml/Uriorcurie
+    description: a URI or a CURIE
+    notes:
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "uriorcurie".
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    base: URIorCURIE
+    uri: xsd:anyURI
+    repr: str
+  curie:
+    name: curie
+    definition_uri: https://w3id.org/linkml/Curie
+    conforms_to: https://www.w3.org/TR/curie/
+    description: a compact URI
+    notes:
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "curie".
+    comments:
+      - in RDF serializations this MUST be expanded to a URI
+      - in non-RDF serializations MAY be serialized as the compact representation
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    base: Curie
+    uri: xsd:string
+    repr: str
+  uri:
+    name: uri
+    definition_uri: https://w3id.org/linkml/Uri
+    conforms_to: https://www.ietf.org/rfc/rfc3987.txt
+    description: a complete URI
+    notes:
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "uri".
+    comments:
+      - in RDF serializations a slot with range of uri is treated as a literal or type xsd:anyURI unless it is an identifier or a reference to an identifier, in which case it is translated directly to a node
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    close_mappings:
+      - schema:URL
+    base: URI
+    uri: xsd:anyURI
+    repr: str
+  ncname:
+    name: ncname
+    definition_uri: https://w3id.org/linkml/Ncname
+    description: Prefix part of CURIE
+    notes:
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "ncname".
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    base: NCName
+    uri: xsd:string
+    repr: str
+  objectidentifier:
+    name: objectidentifier
+    definition_uri: https://w3id.org/linkml/Objectidentifier
+    description: A URI or CURIE that represents an object in the model.
+    notes:
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "objectidentifier".
+    comments:
+      - Used for inheritance and type checking
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    base: ElementIdentifier
+    uri: shex:iri
+    repr: str
+  nodeidentifier:
+    name: nodeidentifier
+    definition_uri: https://w3id.org/linkml/Nodeidentifier
+    description: A URI, CURIE or BNODE that represents a node in a model.
+    notes:
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "nodeidentifier".
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    base: NodeIdentifier
+    uri: shex:nonLiteral
+    repr: str
+  jsonpointer:
+    name: jsonpointer
+    definition_uri: https://w3id.org/linkml/Jsonpointer
+    conforms_to: https://datatracker.ietf.org/doc/html/rfc6901
+    description: A string encoding a JSON Pointer. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to a valid object within the current instance document when encoded in tree form.
+    notes:
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "jsonpointer".
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    base: str
+    uri: xsd:string
+    repr: str
+  jsonpath:
+    name: jsonpath
+    definition_uri: https://w3id.org/linkml/Jsonpath
+    conforms_to: https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html
+    description: A string encoding a JSON Path. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded in tree form.
+    notes:
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "jsonpath".
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    base: str
+    uri: xsd:string
+    repr: str
+  sparqlpath:
+    name: sparqlpath
+    definition_uri: https://w3id.org/linkml/Sparqlpath
+    conforms_to: https://www.w3.org/TR/sparql11-query/#propertypaths
+    description: A string encoding a SPARQL Property Path. The value of the string MUST conform to SPARQL syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded as RDF.
+    notes:
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "sparqlpath".
+    from_schema: https://w3id.org/linkml/types
+    imported_from: linkml:types
+    base: str
+    uri: xsd:string
+    repr: str
+slots:
+  id:
+    name: id
+    definition_uri: https://w3id.org/linkml/examples/personinfo/id
+    description: :- An element's [Globally Unique Identifier (GUID)](http://guid.one/guid) in a model. Tools may choose the GUID version to use (language default is v4).
+    from_schema: https://w3id.org/linkml/examples/personinfo
+    close_mappings:
+      - schema:identifier
+    slot_uri: https://w3id.org/linkml/examples/personinfo/id
+    identifier: false
+    owner: Element
+    domain_of:
+      - Element
+    range: string
+    required: false
+    pattern: ^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$
+  short_name:
+    name: short_name
+    definition_uri: https://w3id.org/linkml/examples/personinfo/short_name
+    description: :- An abbreviated name useful for referring to the element. Conforms to the NPM package.json *name* [format](https://docs.npmjs.com/cli/v8/configuring-npm/package-json#name).
+    from_schema: https://w3id.org/linkml/examples/personinfo
+    close_mappings:
+      - schema:name
+    slot_uri: https://w3id.org/linkml/examples/personinfo/short_name
+    owner: Element
+    domain_of:
+      - Element
+    range: string
+    required: true
+    pattern: ^(@[a-z0-9-~][a-z0-9-._~]*/)?[a-z0-9-~][a-z0-9-._~]*$
+  name:
+    name: name
+    definition_uri: https://w3id.org/linkml/examples/personinfo/name
+    description: :- A fully descriptive name of an element, particularly in the context of the definition of the element. Conforms to the NPM package.json *description* [format](https://docs.npmjs.com/cli/v8/configuring-npm/package-json#description).
+    from_schema: https://w3id.org/linkml/examples/personinfo
+    close_mappings:
+      - schema:description
+    slot_uri: https://w3id.org/linkml/examples/personinfo/name
+    owner: Element
+    domain_of:
+      - Element
+    range: string
+    required: false
+  body:
+    name: body
+    definition_uri: https://w3id.org/linkml/examples/personinfo/body
+    description: :- The list of sub-Elements owned by an Element.  When the Element is deleted from a model, all owned sub-Elements are also deleted.
+    from_schema: https://w3id.org/linkml/examples/personinfo
+    slot_uri: https://w3id.org/linkml/examples/personinfo/body
+    owner: Element
+    domain_of:
+      - Element
+    range: Element
+    required: false
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  notes:
+    name: notes
+    definition_uri: https://w3id.org/linkml/examples/personinfo/notes
+    from_schema: https://w3id.org/linkml/examples/personinfo
+    slot_uri: https://w3id.org/linkml/examples/personinfo/notes
+    owner: Channel
+    domain_of:
+      - Actor
+      - Resource
+      - Action
+      - Transaction
+      - ValueProposition
+      - CustomerRelationship
+      - Channel
+    range: string
+    required: false
+  derived_from:
+    name: derived_from
+    definition_uri: https://w3id.org/linkml/examples/personinfo/derived_from
+    from_schema: https://w3id.org/linkml/examples/personinfo
+    slot_uri: https://w3id.org/linkml/examples/personinfo/derived_from
+    range: string
+  key_partners:
+    name: key_partners
+    definition_uri: https://w3id.org/linkml/examples/personinfo/key_partners
+    description: Essential collaborators.
+    from_schema: https://w3id.org/linkml/examples/personinfo
+    slot_uri: https://w3id.org/linkml/examples/personinfo/key_partners
+    owner: Container
+    domain_of:
+      - Container
+    range: KeyPartner
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  key_activities:
+    name: key_activities
+    definition_uri: https://w3id.org/linkml/examples/personinfo/key_activities
+    description: Core activities performed within the business.
+    from_schema: https://w3id.org/linkml/examples/personinfo
+    slot_uri: https://w3id.org/linkml/examples/personinfo/key_activities
+    owner: Container
+    domain_of:
+      - Container
+    range: KeyActivity
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  key_resources:
+    name: key_resources
+    definition_uri: https://w3id.org/linkml/examples/personinfo/key_resources
+    description: Assets needed to perform key business activities.
+    from_schema: https://w3id.org/linkml/examples/personinfo
+    slot_uri: https://w3id.org/linkml/examples/personinfo/key_resources
+    owner: Container
+    domain_of:
+      - Container
+    range: KeyResource
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  value_proposition:
+    name: value_proposition
+    definition_uri: https://w3id.org/linkml/examples/personinfo/value_proposition
+    description: Statements of how the business generates results for its stakeholders.
+    from_schema: https://w3id.org/linkml/examples/personinfo
+    slot_uri: https://w3id.org/linkml/examples/personinfo/value_proposition
+    owner: Container
+    domain_of:
+      - Container
+    range: ValueProposition
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  customer_relationships:
+    name: customer_relationships
+    definition_uri: https://w3id.org/linkml/examples/personinfo/customer_relationships
+    description: Routes through which connections with customers are created.
+    from_schema: https://w3id.org/linkml/examples/personinfo
+    slot_uri: https://w3id.org/linkml/examples/personinfo/customer_relationships
+    owner: Container
+    domain_of:
+      - Container
+    range: CustomerRelationship
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  customer_segments:
+    name: customer_segments
+    definition_uri: https://w3id.org/linkml/examples/personinfo/customer_segments
+    description: Descriptions of subsections of the greater market i.e. target customers.
+    from_schema: https://w3id.org/linkml/examples/personinfo
+    slot_uri: https://w3id.org/linkml/examples/personinfo/customer_segments
+    owner: Container
+    domain_of:
+      - Container
+    range: CustomerSegment
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  cost_structure:
+    name: cost_structure
+    definition_uri: https://w3id.org/linkml/examples/personinfo/cost_structure
+    description: The major costs created in the operation of the business.
+    from_schema: https://w3id.org/linkml/examples/personinfo
+    slot_uri: https://w3id.org/linkml/examples/personinfo/cost_structure
+    owner: Container
+    domain_of:
+      - Container
+    range: CostStructure
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  revenue_streams:
+    name: revenue_streams
+    definition_uri: https://w3id.org/linkml/examples/personinfo/revenue_streams
+    description: The sources of income for the business.
+    from_schema: https://w3id.org/linkml/examples/personinfo
+    slot_uri: https://w3id.org/linkml/examples/personinfo/revenue_streams
+    owner: Container
+    domain_of:
+      - Container
+    range: RevenueStream
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+classes:
+  Element:
+    name: Element
+    definition_uri: https://w3id.org/linkml/examples/personinfo/Element
+    description: :- The basic construct of an m30ml model.  All other classes inherit from Element such that a model is a collection of Elements. Elements may own other Elements via the *body* slot.
+    from_schema: https://w3id.org/linkml/examples/personinfo
+    slots:
+      - id
+      - short_name
+      - name
+      - body
+    class_uri: https://w3id.org/linkml/examples/personinfo/Element
+  Actor:
+    name: Actor
+    definition_uri: https://w3id.org/linkml/examples/personinfo/Actor
+    description: An entity that can perform an action.
+    from_schema: https://w3id.org/linkml/examples/personinfo
+    is_a: Element
+    slots:
+      - id
+      - short_name
+      - name
+      - body
+      - notes
+    class_uri: https://w3id.org/linkml/examples/personinfo/Actor
+  Resource:
+    name: Resource
+    definition_uri: https://w3id.org/linkml/examples/personinfo/Resource
+    description: A component used to perform business activities.
+    from_schema: https://w3id.org/linkml/examples/personinfo
+    is_a: Element
+    slots:
+      - id
+      - short_name
+      - name
+      - body
+      - notes
+    class_uri: https://w3id.org/linkml/examples/personinfo/Resource
+  Action:
+    name: Action
+    definition_uri: https://w3id.org/linkml/examples/personinfo/Action
+    description: An event initiated by an Actor
+    from_schema: https://w3id.org/linkml/examples/personinfo
+    is_a: Element
+    slots:
+      - id
+      - short_name
+      - name
+      - body
+      - notes
+    class_uri: https://w3id.org/linkml/examples/personinfo/Action
+  Transaction:
+    name: Transaction
+    definition_uri: https://w3id.org/linkml/examples/personinfo/Transaction
+    description: An exchange of goods, services, or money.
+    from_schema: https://w3id.org/linkml/examples/personinfo
+    is_a: Element
+    slots:
+      - id
+      - short_name
+      - name
+      - body
+      - notes
+    class_uri: https://w3id.org/linkml/examples/personinfo/Transaction
+  KeyPartner:
+    name: KeyPartner
+    definition_uri: https://w3id.org/linkml/examples/personinfo/KeyPartner
+    description: An essential collaborator.
+    from_schema: https://w3id.org/linkml/examples/personinfo
+    is_a: Actor
+    slots:
+      - id
+      - short_name
+      - name
+      - body
+      - notes
+    class_uri: https://w3id.org/linkml/examples/personinfo/KeyPartner
+  KeyActivity:
+    name: KeyActivity
+    definition_uri: https://w3id.org/linkml/examples/personinfo/KeyActivity
+    description: A core activity performed within the business.
+    from_schema: https://w3id.org/linkml/examples/personinfo
+    is_a: Action
+    slots:
+      - id
+      - short_name
+      - name
+      - body
+      - notes
+    class_uri: https://w3id.org/linkml/examples/personinfo/KeyActivity
+  KeyResource:
+    name: KeyResource
+    definition_uri: https://w3id.org/linkml/examples/personinfo/KeyResource
+    description: An asset needed to perform key business activities.
+    from_schema: https://w3id.org/linkml/examples/personinfo
+    is_a: Resource
+    slots:
+      - id
+      - short_name
+      - name
+      - body
+      - notes
+    class_uri: https://w3id.org/linkml/examples/personinfo/KeyResource
+  ValueProposition:
+    name: ValueProposition
+    definition_uri: https://w3id.org/linkml/examples/personinfo/ValueProposition
+    description: A statement of how the business generates results for its stakeholders.
+    from_schema: https://w3id.org/linkml/examples/personinfo
+    is_a: Element
+    slots:
+      - id
+      - short_name
+      - name
+      - body
+      - notes
+    class_uri: https://w3id.org/linkml/examples/personinfo/ValueProposition
+  CustomerRelationship:
+    name: CustomerRelationship
+    definition_uri: https://w3id.org/linkml/examples/personinfo/CustomerRelationship
+    description: A route through which connections with customers are created.
+    from_schema: https://w3id.org/linkml/examples/personinfo
+    is_a: Element
+    slots:
+      - id
+      - short_name
+      - name
+      - body
+      - notes
+    class_uri: https://w3id.org/linkml/examples/personinfo/CustomerRelationship
+  CustomerSegment:
+    name: CustomerSegment
+    definition_uri: https://w3id.org/linkml/examples/personinfo/CustomerSegment
+    description: A description of a subsection of the greater market i.e. a target customer.
+    from_schema: https://w3id.org/linkml/examples/personinfo
+    is_a: Actor
+    slots:
+      - id
+      - short_name
+      - name
+      - body
+      - notes
+    class_uri: https://w3id.org/linkml/examples/personinfo/CustomerSegment
+  Channel:
+    name: Channel
+    definition_uri: https://w3id.org/linkml/examples/personinfo/Channel
+    description: A method of communicating the value propositions to potential customers
+    from_schema: https://w3id.org/linkml/examples/personinfo
+    is_a: Element
+    slots:
+      - id
+      - short_name
+      - name
+      - body
+      - notes
+    class_uri: https://w3id.org/linkml/examples/personinfo/Channel
+  CostStructure:
+    name: CostStructure
+    definition_uri: https://w3id.org/linkml/examples/personinfo/CostStructure
+    description: A major cost created in the operation of the business.
+    from_schema: https://w3id.org/linkml/examples/personinfo
+    is_a: Transaction
+    slots:
+      - id
+      - short_name
+      - name
+      - body
+      - notes
+    class_uri: https://w3id.org/linkml/examples/personinfo/CostStructure
+  RevenueStream:
+    name: RevenueStream
+    definition_uri: https://w3id.org/linkml/examples/personinfo/RevenueStream
+    description: A source of income for the business.
+    from_schema: https://w3id.org/linkml/examples/personinfo
+    is_a: Transaction
+    slots:
+      - id
+      - short_name
+      - name
+      - body
+      - notes
+    class_uri: https://w3id.org/linkml/examples/personinfo/RevenueStream
+  Container:
+    name: Container
+    definition_uri: https://w3id.org/linkml/examples/personinfo/Container
+    from_schema: https://w3id.org/linkml/examples/personinfo
+    slots:
+      - key_partners
+      - key_activities
+      - key_resources
+      - value_proposition
+      - customer_relationships
+      - customer_segments
+      - cost_structure
+      - revenue_streams
+    class_uri: https://w3id.org/linkml/examples/personinfo/Container
+    tree_root: true
+metamodel_version: 1.7.0
+source_file: business-model-schema.yaml
+source_file_date: '2024-10-22T04:50:44'
+source_file_size: 5391
+generation_date: '2024-10-22T05:20:50'

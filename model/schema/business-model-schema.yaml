@@ -16,7 +16,7 @@ classes:
       Elements may own other Elements via the *body* slot. 
     slots:
       - id
-      - shortName
+      - short_name
       - name
       - body
 
@@ -113,8 +113,8 @@ classes:
 
 slots:
   id:
-    identifier: true
-    required: true
+    identifier: false # normally true
+    required: false # normally true
     description: :- 
       An element's [Globally Unique Identifier (GUID)](http://guid.one/guid) in a model.  
       Tools may choose the GUID version to use (language default is v4).
@@ -148,7 +148,7 @@ slots:
   notes:
     required: false
   derived_from:
-    range: Object
+    # range: Object
   key_partners:
     description: >-
       Essential collaborators.
