@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
+<info>
+<title>Business Model Canvas - AsciiDoc Template</title>
+<date>2024-10-21</date>
+</info>
+<informaltable frame="all" rowsep="1" colsep="1">
+<tgroup cols="10">
+<colspec colname="col_1" colwidth="10*"/>
+<colspec colname="col_2" colwidth="10*"/>
+<colspec colname="col_3" colwidth="10*"/>
+<colspec colname="col_4" colwidth="10*"/>
+<colspec colname="col_5" colwidth="10*"/>
+<colspec colname="col_6" colwidth="10*"/>
+<colspec colname="col_7" colwidth="10*"/>
+<colspec colname="col_8" colwidth="10*"/>
+<colspec colname="col_9" colwidth="10*"/>
+<colspec colname="col_10" colwidth="10*"/>
+<tbody>
+<row>
+<entry align="left" valign="top" namest="col_1" nameend="col_2" morerows="1"><simpara><emphasis role="strong">Key Partners</emphasis><?asciidoc-br?></simpara>
+<itemizedlist>
+<listitem>
+<simpara>this</simpara>
+</listitem>
+<listitem>
+<simpara>is</simpara>
+</listitem>
+<listitem>
+<simpara>a list</simpara>
+</listitem>
+</itemizedlist></entry>
+<entry align="left" valign="top" namest="col_2" nameend="col_3"><simpara><emphasis role="strong">Key Activities</emphasis><?asciidoc-br?></simpara>
+<simpara>Lorem Ipsum</simpara></entry>
+<entry align="left" valign="top" namest="col_3" nameend="col_4" morerows="1"><simpara><emphasis role="strong">Value Proposition</emphasis><?asciidoc-br?></simpara>
+<simpara>Lorem Ipsum</simpara></entry>
+<entry align="left" valign="top" namest="col_4" nameend="col_5"><simpara><emphasis role="strong">Customer Relationships</emphasis><?asciidoc-br?></simpara>
+<simpara>Lorem Ipsum</simpara></entry>
+<entry align="left" valign="top" namest="col_5" nameend="col_6" morerows="1"><simpara><emphasis role="strong">Customer Segments</emphasis><?asciidoc-br?></simpara>
+<simpara>Lorem Ipsum</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top" namest="col_1" nameend="col_2"><simpara><emphasis role="strong">Key Ressources</emphasis><?asciidoc-br?></simpara>
+<simpara>Lorem Ipsum</simpara></entry>
+<entry align="left" valign="top" namest="col_2" nameend="col_3"><simpara><emphasis role="strong">Channels</emphasis><?asciidoc-br?></simpara>
+<simpara>Lorem Ipsum</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top" namest="col_1" nameend="col_5"><simpara><emphasis role="strong">Cost Structure</emphasis><?asciidoc-br?></simpara>
+<simpara>Lorem Ipsum</simpara></entry>
+<entry align="left" valign="top" namest="col_2" nameend="col_6"><simpara><emphasis role="strong">Revenue Streams</emphasis><?asciidoc-br?></simpara>
+<simpara>Lorem Ipsum</simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</article>

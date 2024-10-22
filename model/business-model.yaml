@@ -1,0 +1,24 @@
+key_partners:
+  - name: St. Clair County Economic Development Alliance
+    short_name: local-eda
+  - name: St. Clair County Library System
+    short_name: local-library
+  - name: YMCA
+    short_name: Local Community Center
+  - name: Other Community Venues
+    short_name: community-venues
+key_activities:
+  - short_name: Sales/Marketing
+  - short_name: Machine/Kit Manufacturing
+  - short_name: Open Source R&D/Publishing
+key_resources:
+  - short_name: Machine Parts
+    notes: All of the components needed for the assembly and sale of the kits and assembled machines
+  - short_name: Open Source Hardware/Software
+  - short_name: Workshop Venues/Space
+  - short_name: Transportation
+value_proposition: []
+customer_relationships: []
+customer_segments: []
+cost_structure: []
+revenue_streams: []

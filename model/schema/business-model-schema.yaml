@@ -1,0 +1,199 @@
+id: https://w3id.org/linkml/examples/personinfo
+name: business-model
+title: Business Model Schema
+description: |-
+  Schema for a business model
+prefixes:                                 
+  linkml: https://w3id.org/linkml/
+imports:
+  - linkml:types
+default_range: string
+
+classes:
+  Element:
+    description: :-
+      The basic construct of an m30ml model.  All other classes inherit from Element such that a model is a collection of Elements.
+      Elements may own other Elements via the *body* slot. 
+    slots:
+      - id
+      - shortName
+      - name
+      - body
+
+  Actor:
+    is_a: Element
+    description: >-
+      An entity that can perform an action.
+    slots:
+      - notes
+
+  Resource:
+    is_a: Element
+    description: >-
+      A component used to perform business activities.
+    slots:
+      - notes
+
+  Action:
+    is_a: Element
+    description: >-
+      An event initiated by an Actor
+    slots:
+      - notes
+
+  Transaction:
+    is_a: Element
+    description: >-
+      An exchange of goods, services, or money.
+    slots:
+      - notes
+
+  KeyPartner:
+    is_a: Actor
+    description: >-
+      An essential collaborator.
+
+  KeyActivity:
+    is_a: Action
+    description: >-
+      A core activity performed within the business.
+
+  KeyResource:
+    is_a: Resource
+    description: >-
+      An asset needed to perform key business activities.
+
+  ValueProposition:
+    is_a: Element
+    description: >-
+      A statement of how the business generates results for its stakeholders.
+    slots:
+      - notes
+
+  CustomerRelationship:
+    is_a: Element
+    description: >-
+      A route through which connections with customers are created.
+    slots:
+      - notes
+
+  CustomerSegment:
+    is_a: Actor
+    description: >-
+      A description of a subsection of the greater market i.e. a target customer.
+
+  Channel:
+    is_a: Element
+    description: >-
+      A method of communicating the value propositions to potential customers
+    slots:
+      - notes
+
+  CostStructure:
+    is_a: Transaction
+    description: >-
+      A major cost created in the operation of the business.
+
+  RevenueStream:
+    is_a: Transaction
+    description: >-
+      A source of income for the business.
+
+  Container:
+    tree_root: true
+    slots:
+    - key_partners
+    - key_activities
+    - key_resources
+    - value_proposition
+    - customer_relationships
+    - customer_segments
+    - cost_structure
+    - revenue_streams
+
+slots:
+  id:
+    identifier: true
+    required: true
+    description: :- 
+      An element's [Globally Unique Identifier (GUID)](http://guid.one/guid) in a model.  
+      Tools may choose the GUID version to use (language default is v4).
+    close_mappings:
+      - schema:identifier
+    # from https://www.geeksforgeeks.org/how-to-validate-guid-globally-unique-identifier-using-regular-expression/
+    pattern: "^[{]?[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}[}]?$"  
+  short_name:
+    required: true
+    description: :-
+      An abbreviated name useful for referring to the element.  
+      Conforms to the NPM package.json *name* [format](https://docs.npmjs.com/cli/v8/configuring-npm/package-json#name).
+    close_mappings:
+      - schema:name
+    # from https://github.com/dword-design/package-name-regex/releases/tag/v2.0.6
+    pattern: "^(@[a-z0-9-~][a-z0-9-._~]*\/)?[a-z0-9-~][a-z0-9-._~]*$"
+  name:
+    required: false
+    description: :-
+      A fully descriptive name of an element, particularly in the context of the definition of the element.
+      Conforms to the NPM package.json *description* [format](https://docs.npmjs.com/cli/v8/configuring-npm/package-json#description).
+    close_mappings:
+      - schema:description
+  body:
+    required: false
+    description: :-
+      The list of sub-Elements owned by an Element.  When the Element is deleted from a model, all owned sub-Elements are also deleted.
+    multivalued: true
+    range: Element
+    inlined_as_list: true
+  notes:
+    required: false
+  derived_from:
+    range: Object
+  key_partners:
+    description: >-
+      Essential collaborators.
+    multivalued: true
+    inlined_as_list: true
+    range: KeyPartner
+  key_activities:
+    description: >-
+      Core activities performed within the business.
+    multivalued: true
+    inlined_as_list: true
+    range: KeyActivity
+  key_resources:
+    description: >-
+      Assets needed to perform key business activities.
+    multivalued: true
+    inlined_as_list: true
+    range: KeyResource
+  value_proposition:
+    description: >-
+      Statements of how the business generates results for its stakeholders.
+    multivalued: true
+    inlined_as_list: true
+    range: ValueProposition
+  customer_relationships:
+    description: >-
+      Routes through which connections with customers are created.
+    multivalued: true
+    inlined_as_list: true
+    range: CustomerRelationship
+  customer_segments:
+    description: >-
+      Descriptions of subsections of the greater market i.e. target customers.
+    multivalued: true
+    inlined_as_list: true
+    range: CustomerSegment
+  cost_structure:
+    description: >-
+      The major costs created in the operation of the business.
+    multivalued: true
+    inlined_as_list: true
+    range: CostStructure
+  revenue_streams:
+    description: >-
+      The sources of income for the business.
+    multivalued: true
+    inlined_as_list: true
+    range: RevenueStream

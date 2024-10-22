@@ -1,0 +1,43 @@
+= Business Model Canvas - AsciiDoc Template =
+
+[cols="10,10,10,10,10,10,10,10,10,10"]
+|===
+2.2+a| *Key Partners* +
+
+* this
+* is
+* a list
+
+2+a| *Key Activities* +
+
+Lorem Ipsum
+
+2.2+a| *Value Proposition* +
+
+Lorem Ipsum
+
+2+a| *Customer Relationships* +
+
+Lorem Ipsum
+
+2.2+a| *Customer Segments* +
+
+Lorem Ipsum
+
+2+a| *Key Ressources* +
+
+Lorem Ipsum
+
+2+a| *Channels* +
+
+Lorem Ipsum
+
+5+a| *Cost Structure* +
+
+Lorem Ipsum
+
+5+a| *Revenue Streams* +
+
+Lorem Ipsum
+
+|===
