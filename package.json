@@ -19,9 +19,12 @@
     "uuid": "^10.0.0"
   },
   "scripts": {
-    "build": "yq -o=json model/business-model.yaml > build/business-model-canvas.json && npm run view;",
-    "model": "",
-    "help": "nunjucks --help",
-    "view": "nunjucks -d build/business-model-canvas.json views/business-model-canvas.adoc.njk > build/business-model-canvas.adoc"
+    "build": "npm run clean && npm run buildSchema && npm run buildModel && npm run validateModel && npm run buildView;",
+    "clean": "./gradlew clean",
+    "buildSchema": "./gradlew build",
+    "buildModel": "yq -o=json model/business-model.yaml > build/business-model-canvas.json",
+    "validateModel": "linkml-validate -s build/schema/business-model-schema.yaml build/business-model-canvas.json",
+    "buildView": "nunjucks -d build/business-model-canvas.json views/business-model-canvas.adoc.njk > build/business-model-canvas.adoc",
+    "help": "nunjucks --help"
   }
 }
