@@ -13,5 +13,15 @@
     "versionControlTool": "git",
     "buildTool": "gradle",
     "loggingLevel": "error"
+  },
+  "dependencies": {
+    "@rse/nunjucks-cli": "^1.5.3",
+    "uuid": "^10.0.0"
+  },
+  "scripts": {
+    "build": "yq -o=json model/business-model.yaml > build/business-model-canvas.json;",
+    "model": "",
+    "help": "nunjucks --help",
+    "view": "nunjucks -d build/business-model-canvas.json views/business-model-canvas.adoc.njk"
   }
 }
