@@ -5,39 +5,55 @@
 2.2+a| *Key Partners* +
 
 {% for partner in key_partners %}
-  * {{ partner.short_name }}
+  * {{ partner.name }}
 {% endfor %}
 
 2+a| *Key Activities* +
 
-Lorem Ipsum
+{% for activity in key_activities %}
+  * {{ activity.name }}
+{% endfor %}
 
 2.2+a| *Value Proposition* +
 
-Lorem Ipsum
+{% for value in value_proposition %}
+  * {{ value.name }}
+{% endfor %}
 
 2+a| *Customer Relationships* +
 
-Lorem Ipsum
+{% for relation in customer_relationships %}
+  * {{ relation.name }}
+{% endfor %}
 
 2.2+a| *Customer Segments* +
 
-Lorem Ipsum
+{% for segment in customer_segments %}
+  * {{ segment.name }}
+{% endfor %}
 
-2+a| *Key Ressources* +
+2+a| *Key Resources* +
 
-Lorem Ipsum
+{% for resource in key_resources %}
+  * {{ resource.name }}
+{% endfor %}
 
 2+a| *Channels* +
 
-Lorem Ipsum
+{% for channel in channels %}
+  * {{ channel.name }}
+{% endfor %}
 
 5+a| *Cost Structure* +
 
-Lorem Ipsum
+{% for cost in cost_structure %}
+  * {{ cost.name }}
+{% endfor %}
 
 5+a| *Revenue Streams* +
 
-Lorem Ipsum
+{% for stream in revenue_streams %}
+  * {{ stream.name }}
+{% endfor %}
 
 |===

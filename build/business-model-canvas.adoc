@@ -4,41 +4,40 @@
 |===
 2.2+a| *Key Partners* +
 
-  * local-eda
-  * local-library
-  * local-community-center
-  * community-venues
+  * St. Clair County Economic Development Alliance
+  * St. Clair County Library System
+  * YMCA
+  * Other Community Venues
 
 2+a| *Key Activities* +
 
-Lorem Ipsum
+  * Sales/Marketing
+  * Machine/Kit Manufacturing
+  * Open Source R&D/Publishing
 
 2.2+a| *Value Proposition* +
 
-Lorem Ipsum
 
 2+a| *Customer Relationships* +
 
-Lorem Ipsum
 
 2.2+a| *Customer Segments* +
 
-Lorem Ipsum
 
-2+a| *Key Ressources* +
+2+a| *Key Resources* +
 
-Lorem Ipsum
+  * Machine Parts
+  * Open Source Hardware/Software
+  * Workshop Venues/Space
+  * Transportation
 
 2+a| *Channels* +
 
-Lorem Ipsum
 
 5+a| *Cost Structure* +
 
-Lorem Ipsum
 
 5+a| *Revenue Streams* +
 
-Lorem Ipsum
 
 |===
